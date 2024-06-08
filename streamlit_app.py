@@ -1,22 +1,32 @@
 import streamlit as st
+from streamlit_lottie import st_lottie
+import requests
 
-st.set_page_config(layout="wide")
+#load lottie animation
+def load_lottieurl(url):
+  r = requests.get(url)
+  if r.status_code != 200:
+    return None
+  return r.json()
 
-# Create a two-column layout
-col1, col2 = st.columns([1, 3])
+lottie_akinaror = load_lottieurl("https://assets7.lottiefiles.com/packages/lf20_mj89j8z4.json")
 
-# Display the image in the first column using HTML
+st.set_page_config(page_title="Akinator", page_icon=":genie:")
+
+st.markdown('<style>body{background-color: #c9e7f1;}</style>', unsafe_allow_html=True)
+st.title(":genie: Akinator")
+
+col1, col2 = st.columns(2)
+
 with col1:
-    st.markdown(f"""
-        <img src="https://en.akinator.com/assets/img/akitudes_670x1096/defi.png" width="250">
-    """, unsafe_allow_html=True)
+  st_lottie(lottie_akinaror, speed=1, height=400, key="akinator")
 
-# Display the question asking menu in the second column
 with col2:
-    st.markdown("# Is your character real?")
-    st.markdown("---")
-    st.button("Yes")
-    st.button("No")
-    st.button("Don't know")
-    st.button("Probably")
-    st.button("Probably not")
+  st.write("Is your character real?")
+  
+  choices = ["Yes", "No", "Don't know", "Probably", "Probably not"]
+
+  choice = st.radio("Select", choices)
+  
+  if st.button("Correct"):
+    st.success("You have guessed correctly!")
