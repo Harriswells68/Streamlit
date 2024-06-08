@@ -6,11 +6,11 @@ st.set_page_config(layout="wide")
 st.markdown(
     """
     <style>
-        .css-18e3th9 {
+       .css-18e3th9 {
             padding-top: 1rem;
             padding-bottom: 1rem;
         }
-        .css-1d3j6tg {
+       .css-1d3j6tg {
             padding-top: 1rem;
             padding-bottom: 1rem;
         }
@@ -22,11 +22,11 @@ st.markdown(
 col1, col2 = st.columns([1, 1])
 
 with col1:
-    st.image("https://i.imgur.com/4z5tI6g.png", width=250)
+    st.image("https://en.akinator.com/assets/img/akitudes_670x1096/defi.png", width=250)
     st.markdown(
         """
         <style>
-            .css-18e3th9 {
+           .css-18e3th9 {
                 padding-top: 1rem;
                 padding-bottom: 1rem;
             }
@@ -40,7 +40,7 @@ with col2:
     st.markdown(
         """
         <style>
-            .css-1d3j6tg {
+           .css-1d3j6tg {
                 padding-top: 1rem;
                 padding-bottom: 1rem;
             }
@@ -65,7 +65,7 @@ with col2:
 st.markdown(
     """
     <style>
-        .css-15sduyf {
+       .css-15sduyf {
             padding-top: 1rem;
             padding-bottom: 1rem;
         }
@@ -77,7 +77,7 @@ st.markdown(
 st.markdown(
     """
     <style>
-    .css-18e3th9 {
+   .css-18e3th9 {
     padding-top: 1rem;
     padding-bottom: 1rem;
     }
@@ -99,7 +99,7 @@ st.markdown(
     """
     <div style="text-align: center;">
         <a href="https://en.akinator.com/" style="text-decoration: none;">
-            <img src="https://i.imgur.com/pQ0o9Jq.png" alt="Akinator Logo" style="width: 200px;">
+            <img src="https://en.akinator.com/assets/img/logo.png" alt="Akinator Logo" style="width: 200px;">
         </a>
     </div>
     """,
@@ -109,7 +109,7 @@ st.markdown(
 st.markdown(
     """
     <style>
-    .css-18e3th9 {
+   .css-18e3th9 {
     padding-top: 1rem;
     padding-bottom: 1rem;
     }
