@@ -1,136 +1,23 @@
+
 import streamlit as st
 from PIL import Image
 
+# Set page configuration
 st.set_page_config(layout="wide")
 
-st.markdown(
-    """
-    <style>
-       .css-18e3th9 {
-            padding-top: 1rem;
-            padding-bottom: 1rem;
-        }
-       .css-1d3j6tg {
-            padding-top: 1rem;
-            padding-bottom: 1rem;
-        }
-    </style>
-    """,
-    unsafe_allow_html=True,
-)
-
+# Create two columns
 col1, col2 = st.columns([1, 1])
 
 with col1:
-    st.image("https://en.akinator.com/assets/img/akitudes_670x1096/defi.png", width=250)
-    st.markdown(
-        """
-        <style>
-           .css-18e3th9 {
-                padding-top: 1rem;
-                padding-bottom: 1rem;
-            }
-        </style>
-        """,
-        unsafe_allow_html=True,
-    )
-    st.button("Correct")
+    # Display the uploaded image
+    image = Image.open("https://en.akinator.com/assets/img/akitudes_670x1096/defi.png")
+    st.image(image, width=250)
 
 with col2:
-    st.markdown(
-        """
-        <style>
-           .css-1d3j6tg {
-                padding-top: 1rem;
-                padding-bottom: 1rem;
-            }
-        </style>
-        """,
-        unsafe_allow_html=True,
-    )
-    st.markdown(
-        f"""
-        <div style="text-align: center;">
-        <h1 style="font-size: 2rem;">Is your character real?</h1>
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
+    # Display a question with radio buttons
+    st.markdown("<h1 style='text-align: center; font-size: 2rem;'>Is your character real?</h1>", unsafe_allow_html=True)
     st.radio(
         "",
         ("Yes", "No", "Don't know", "Probably", "Probably not"),
         horizontal=True,
     )
-
-st.markdown(
-    """
-    <style>
-       .css-15sduyf {
-            padding-top: 1rem;
-            padding-bottom: 1rem;
-        }
-    </style>
-    """,
-    unsafe_allow_html=True,
-)
-
-st.markdown(
-    """
-    <style>
-   .css-18e3th9 {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True,
-)
-
-st.markdown(
-    """
-    <div style="text-align: center;">
-        <button style="background-color: #f0f0f0; border: none; padding: 1rem 2rem; font-size: 1rem; border-radius: 5px;">Inactive</button>
-    </div>
-    """,
-    unsafe_allow_html=True,
-)
-
-st.markdown(
-    """
-    <div style="text-align: center;">
-        <a href="https://en.akinator.com/" style="text-decoration: none;">
-            <img src="https://en.akinator.com/assets/img/logo.png" alt="Akinator Logo" style="width: 200px;">
-        </a>
-    </div>
-    """,
-    unsafe_allow_html=True,
-)
-
-st.markdown(
-    """
-    <style>
-   .css-18e3th9 {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True,
-)
-
-st.markdown(
-    """
-    <div style="text-align: center;">
-        <a href="https://www.facebook.com/Akinator/" style="text-decoration: none; margin-right: 1rem;">
-            <img src="https://i.imgur.com/9g0L439.png" alt="Facebook" style="width: 25px;">
-        </a>
-        <a href="https://twitter.com/AkinatorGame" style="text-decoration: none; margin-right: 1rem;">
-            <img src="https://i.imgur.com/mG2G6yC.png" alt="Twitter" style="width: 25px;">
-        </a>
-        <a href="https://plus.google.com/+AkinatorGame" style="text-decoration: none;">
-            <img src="https://i.imgur.com/6Y7O60N.png" alt="Google Plus" style="width: 25px;">
-        </a>
-    </div>
-    """,
-    unsafe_allow_html=True,
-)
