@@ -1,23 +1,22 @@
-
 import streamlit as st
-from PIL import Image
 
-# Set page configuration
 st.set_page_config(layout="wide")
 
-# Create two columns
-col1, col2 = st.columns([1, 1])
+# Create a two-column layout
+col1, col2 = st.columns([1, 3])
 
+# Display the image in the first column using HTML
 with col1:
-    # Display the uploaded image
-    image = Image.open("https://en.akinator.com/assets/img/akitudes_670x1096/defi.png")
-    st.image(image, width=250)
+    st.markdown(f"""
+        <img src="https://en.akinator.com/assets/img/akitudes_670x1096/defi.png" width="250">
+    """, unsafe_allow_html=True)
 
+# Display the question asking menu in the second column
 with col2:
-    # Display a question with radio buttons
-    st.markdown("<h1 style='text-align: center; font-size: 2rem;'>Is your character real?</h1>", unsafe_allow_html=True)
-    st.radio(
-        "",
-        ("Yes", "No", "Don't know", "Probably", "Probably not"),
-        horizontal=True,
-    )
+    st.markdown("# Is your character real?")
+    st.markdown("---")
+    st.button("Yes")
+    st.button("No")
+    st.button("Don't know")
+    st.button("Probably")
+    st.button("Probably not")
