@@ -1,0 +1,13 @@
+pandas
+streamlit
+plotly
+python-dotenv
+altair
+bokeh
+requests
+google-generativeai
+whatsapp-api-client-python
+psycopg2
+sqlalchemy
+boto3
+pillow
