@@ -157,9 +157,9 @@ def generate(proba=None):
     st.session_state.mainqq=mainquestion
     create_section()
     st.session_state.init=True
-  if proba!=None:
+  if proba!=None st.session_state.state==True:
     st.session_state.mainqq=mainquestion
-  return mainquestion
+    return mainquestion
 
 def mainp(k):
   if k=='Yes':
