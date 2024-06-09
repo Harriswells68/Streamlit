@@ -139,17 +139,21 @@ def generate(proba=None):
   if proba!=None:
     st.session_state.next=entropy(proba)
   #ulta=["greencolor'", "nitst'", "niconfitst'", "bluecolor'", "blueflame'", "cutst'", "cuconfitst'", "yellowcolor'", "rredcolor'", "cotst'", "coconfitst'", "pinkcolor'", "mntst'", "mnconfitst'", "s2tst'", "s2confitst'", "as3tst'", "as3confitst'", "fe2tst'", "fe2confitst'", "ca2tst'", "bredflame'", "sr2confitst", "no2tst'", "no2confitst'", "groupii'", "po4tst'", "po4confitst'", "no3tst'", "no3confitst'", "zntst'", "znconfitst'", "fe3tst'", "fe3confitst'", "fe3confitst2'", "brtst'", "brconfitst'", "sr2tst", "redflame", "groupvi'", "mg2tst'", "mg2confitst'", "al3tst'", "al3confitst'", "groupv", "group'", "nh4tst'", "nh4confitst'", "groupiv'", "cltst'", "clconfitst'", "ch3cootst'", "ch3cooconfitst'", "co3tst", "co3confitst", "groupiii'", "groupi'", "pbtst'", "pbconfitst'", "pbconfitst2'", "so4tst'", "so4confitst'", "odour'", "color"]
-  t=0
-  while True:
-    quesi=st.session_state.next[t]
-    if quesi not in st.session_state.r and list(quesk[quesi][1])[0]!=st.session_state.lq:
-      mainquestion=quesk[quesi][0]
-      st.session_state.lq=list(quesk[quesi][1])[0]
-      st.session_state.y=st.session_state.next[t]
-      break
-    else:
-      t=t+1
-  if proba==None:
+  try:
+    t=0
+    while True:
+      quesi=st.session_state.next[t]
+      if quesi not in st.session_state.r and list(quesk[quesi][1])[0]!=st.session_state.lq:
+        mainquestion=quesk[quesi][0]
+        st.session_state.lq=list(quesk[quesi][1])[0]
+        st.session_state.y=st.session_state.next[t]
+        break
+      else:
+        t=t+1
+  except:
+    st.empty()
+    st.session_state.state=None
+  if proba==None and st.session_state.state==True:
     st.session_state.mainqq=mainquestion
     create_section()
     st.session_state.init=True
@@ -184,4 +188,7 @@ if st.session_state.state==True:
   else:
     create_section()
 else:
-  st.success(f'Your salt is {st.session_state.salt}')
+  if st.session_state.state==False:
+    st.success(f'Your salt is {st.session_state.salt}')
+  else:
+    st.error('You have answered a question wrong!')
